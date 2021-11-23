@@ -14,21 +14,16 @@ public class Server {
             while (true) {
                 Phone phone = new Phone(serverSocket);
                 new Thread(() -> {
-                    String request = phone.readLine();
-                    System.out.println("Request: " + request);
-                    String response = "HELLO FROM SERVER: " + request.length();
-//                    try {
-//                        Thread.sleep(4000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-                    phone.writeLine(response);
-                    System.out.println("Response" + response);
-                    try {
-                        phone.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                        String request = phone.readLine();
+                        System.out.println("Request: " + request);
+                        String response = "HELLO FROM SERVER: " + request.length();
+                        phone.writeLine(response);
+                        System.out.println("Response" + response);
+                        try {
+                            phone.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                 }).start();
             }
         } catch (IOException e) {
