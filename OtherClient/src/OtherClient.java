@@ -1,11 +1,9 @@
-package com;
-
-import com.Phone;
+import com.*;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Client {
+public class OtherClient {
     public static void main(String[] args) {
         while (true){
             try (Phone phone = new Phone("127.0.0.1", 8000)) {
