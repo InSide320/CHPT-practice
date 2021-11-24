@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class OtherClient {
     public static void main(String[] args) {
         while (true){
-            try (Phone phone = new Phone("127.0.0.1", 8000)) {
+            try (Phone phone = new Phone("127.0.0.1", 7500)) {
                 System.out.println("Connected to server!");
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("Input number!: ");

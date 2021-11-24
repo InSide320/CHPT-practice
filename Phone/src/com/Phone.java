@@ -12,7 +12,7 @@ public class Phone implements Closeable {
 
     public Phone(String ip, int port) {
         try {
-            this.socket = new Socket(ip,port);
+            this.socket = new Socket(ip, port);
             this.reader = createReader();
             this.writer = createWriter();
         } catch (IOException e) {
@@ -20,7 +20,7 @@ public class Phone implements Closeable {
         }
     }
 
-    public Phone(ServerSocket server){
+    public Phone(ServerSocket server) {
         try {
             this.socket = server.accept();
             this.reader = createReader();
