@@ -2,6 +2,8 @@ import com.Phone;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Server {
     public static void main(String[] args) {
@@ -14,16 +16,20 @@ public class Server {
             while (true) {
                 Phone phone = new Phone(serverSocket);
                 new Thread(() -> {
-                        String request = phone.readLine();
-                        System.out.println("Request: " + request);
-                        String response = "HELLO FROM SERVER: " + request.length();
-                        phone.writeLine(response);
-                        System.out.println("Response" + response);
-                        try {
-                            phone.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                    String request = phone.readLine();
+                    String requestcolor = phone.readLine();
+                    System.out.println("Request login: " + request
+                            + "\nRequest color:" + requestcolor );
+                    String response = "Login: " + request;
+                    String responsecolor = "Color: " + requestcolor;
+                    phone.writeLine(response);
+                    phone.writeLine(responsecolor);
+                    System.out.println(response + "\n" + responsecolor);
+                    try {
+                        phone.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }).start();
             }
         } catch (IOException e) {
