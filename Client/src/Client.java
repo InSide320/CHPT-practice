@@ -34,11 +34,16 @@ public class Client {
                                 System.out.println("Entry color!");
                                 phone.writeLine("Blue");
                                 break;
+                            case 2:
+                                System.out.println("Entry color!");
+                                phone.writeLine("Red");
+                                break;
                             case 5:
                                 System.out.println("You are out of color picker");
                                 break exit;
                             default:
-                                System.out.println("Pls entry!");
+                                System.out.println("Your entry default color: Black!");
+                                phone.writeLine("Black");
                                 break;
                         }
                     }

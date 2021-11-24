@@ -1,5 +1,6 @@
 import com.Phone;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class Server {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    GUIForm form = new GUIForm(response,requestcolor);
                 }).start();
             }
         } catch (IOException e) {
