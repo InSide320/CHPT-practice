@@ -36,7 +36,7 @@ public class Phone implements Closeable {
             writer.newLine();
             writer.flush();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.getStackTrace();
         }
     }
 
